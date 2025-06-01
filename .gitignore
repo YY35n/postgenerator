@@ -1,0 +1,9 @@
+forum_posts_index.faiss
+__pycache__/
+*.pyc
+.env
+venv/
+forum_posts_index
+accounts.json
+
+
