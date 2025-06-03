@@ -4,7 +4,15 @@ import random
 from config import DISCOURSE_URL
 
 #加载账号
-def load_accounts(path="accounts.json"):
+def accountDecider(website):
+    if website == 1:
+        return 'accounts1.json'
+    elif website == 2:
+        return 'accounts2.json'
+    else:
+        return 'accounts3.json'
+
+def load_accounts(path):
     with open(path, "r") as f:
         return json.load(f)
 

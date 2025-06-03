@@ -7,3 +7,5 @@ forum_posts_index
 accounts.json
 threads_cleaned.json
 
+forum_posts_links.json
+forum_posts_texts.json

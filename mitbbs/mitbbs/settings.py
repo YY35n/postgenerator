@@ -96,3 +96,6 @@ DOWNLOAD_DELAY = 2
 CONCURRENT_REQUESTS_PER_DOMAIN = 2
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
 ROBOTSTXT_OBEY = False
+ITEM_PIPELINES = {
+    'mitbbs.pipelines.FaissPipeline': 300,
+}
