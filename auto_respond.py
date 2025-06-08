@@ -7,7 +7,7 @@ from config import DISCOURSE_URL, REPLY_DELAY_RANGE
 #搜索文章
 def search_topic_by_title(title):
     url = f"{DISCOURSE_URL}/search/query.json?term={title}"
-    response = requests.get(url)
+    response = requests.get(url,verify=False)
     results = response.json()
     topics = results.get("topics", [])
     for topic in topics:
@@ -18,7 +18,7 @@ def search_topic_by_title(title):
 #根据ID搜post
 def get_first_post(topic_id):
     url = f"{DISCOURSE_URL}/t/{topic_id}.json"
-    response = requests.get(url)
+    response = requests.get(url,verify=False)
     posts = response.json()["post_stream"]["posts"]
     return posts[0]["cooked"] if posts else ""
 
@@ -34,7 +34,7 @@ def post_reply(topic_id, reply_text, api_key, username):
         "topic_id": topic_id,
         "raw": reply_text
     }
-    response = requests.post(url, headers=headers, data=payload)
+    response = requests.post(url, headers=headers, data=payload, verify=False)
     if response.status_code == 200:
         print(f"[{username}] 成功回复到帖子 ID {topic_id}")
     else:

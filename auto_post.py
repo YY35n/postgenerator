@@ -33,7 +33,7 @@ def post_to_discourse(title, content, account, CATEGORY_ID):
         "raw": content,
         "category": CATEGORY_ID
     }
-    response = requests.post(url, headers=headers, data=payload)
+    response = requests.post(url, headers=headers, data=payload, verify=False)
     
     if response.status_code == 200:
         print(f"成功由 [{account['username']}] 发帖：{title}")

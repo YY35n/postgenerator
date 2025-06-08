@@ -8,7 +8,7 @@ from reply_generator import generate_reply
 from config import CATEGORY_ID, REPLY_DELAY_RANGE, KEYWORD
 
 
-def load_accounts(path="accounts/accounts1.json"):
+def load_accounts(path="accounts/accounts2.json"):
     with open(path, "r") as f:
         return json.load(f)
 
